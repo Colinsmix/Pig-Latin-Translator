@@ -10,7 +10,7 @@ class PigLatinTranslation
     @new_phrase = []
     words
     @phrase.each do |word|
-      starts_with_vowel?(word) ? @new_phrase << vowel_changer(word) : @new_phrase << consonant_changer(word)
+      @new_phrase << changer(word)
     end
   end
 
@@ -30,11 +30,7 @@ class PigLatinTranslation
     word.downcase[0] =~ /[aeiou]/
   end
 
-  def vowel_changer(word)
-    word + 'way'
-  end
-
-  def consonant_changer(word)
+  def changer(word)
     @word_array = word.split('')
     until starts_with_vowel?(@word_array.join)
     @word_array.insert(@word_array.length - 1, @word_array.delete_at(0))
