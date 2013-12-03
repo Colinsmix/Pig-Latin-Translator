@@ -18,6 +18,7 @@ class PigLatinTranslation
     @new_phrase.each do |word|
       print word + ' '
     end
+    puts
   end
   private
   #an array of words in the phrase
@@ -42,6 +43,6 @@ class PigLatinTranslation
   end
 end
 
-phrase = PigLatinTranslation.new("apple of the morning channel")
+phrase = PigLatinTranslation.new("apple of the morning channel school")
 phrase.translate
 phrase.output
